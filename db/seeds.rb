@@ -7,6 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-25.times do |index|
-  Project.create(name: "project_#{index}")
+(1..25).each do |index|
+  Project.create(
+    name: "project_#{index}",
+    description: "description of project_#{index}"
+  )
 end
