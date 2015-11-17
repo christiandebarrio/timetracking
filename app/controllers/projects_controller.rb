@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.last_created_projects(10)
       if @projects.empty?
-        render 'no_projects_found'
+        render 'no_projects_found' #render template: 'ruta alternativa desde views'
       end
   end
 
