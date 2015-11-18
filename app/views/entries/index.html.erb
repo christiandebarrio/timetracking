@@ -2,10 +2,12 @@
 
 <h2><%= @project.description %></h2>
 
+<h3>The total time worked this month: <%= @total_hours %> hours</h3>
+
 <ul>
   <% @entries.each do |entry| %>
     <li>
-      <%= entry.hours %> hours and <%= entry.minutes %> minutes · <%= entry.date %>
+      <%= entry.hours %>h <%= entry.minutes %> m · <%= entry.date.year %>-<%= entry.date.month %>-<%= entry.date.day %>
     </li>
   <% end %>
 </ul>
