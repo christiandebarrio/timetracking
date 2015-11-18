@@ -34,6 +34,6 @@ class Project < ActiveRecord::Base
     end
 
     total_hours = total_minutes / 60.0
-
+    
   end
 end
