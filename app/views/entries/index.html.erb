@@ -2,7 +2,7 @@
 
 <h2><%= @project.description %></h2>
 
-<%= link_to("< Go back to projects", projects_path) %><br>
+<%= link_to("< Go back to projects", projects_path) %>
 <%= link_to("+ Create new entry", new_project_entry_path(@project)) %>
 
 <h3>The total time worked this month: <%= @total_hours %> hours</h3>
@@ -12,6 +12,7 @@
     <li>
       <%= entry.hours %>h <%= entry.minutes %> m · <%= entry.date.year %>-<%= entry.date.month %>-<%= entry.date.day %>
       <%= link_to("Edit", edit_project_entry_path(@project, entry)) %>
+      <%= link_to("Delete", project_entry_path(@project, entry), method: :delete, data: { confirm: 'Are you sure?' }) %>
     </li>
   <% end %>
 </ul>
