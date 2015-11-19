@@ -2,10 +2,14 @@
 
 <h2><%= @project.description %></h2>
 
+<%= flash_message %>
+
+<br>
+
 <%= link_to("< Go back to projects", projects_path) %>
 <%= link_to("+ Create new entry", new_project_entry_path(@project)) %>
 
-<h3>The total time worked this month: <%= @total_hours %> hours</h3>
+<h3>The total time worked this month: <%= current_month_hours_for_project(@project, @date) %> hours</h3>
 
 <ul>
   <% @entries.each do |entry| %>
